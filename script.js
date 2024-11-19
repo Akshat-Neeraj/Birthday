@@ -1,15 +1,22 @@
 let currentSlide = 0;
 
-function showSlides() {
+// Show the current slide
+function showSlide(index) {
   const slides = document.querySelectorAll(".slides");
-  slides.forEach((slide, index) => {
-    slide.style.display = index === currentSlide ? "block" : "none";
+  if (index >= slides.length) currentSlide = 0; // Loop back to the first slide
+  if (index < 0) currentSlide = slides.length - 1; // Loop back to the last slide
+  
+  // Hide all slides and display only the current slide
+  slides.forEach((slide, i) => {
+    slide.style.display = i === currentSlide ? "block" : "none";
   });
-  currentSlide = (currentSlide + 1) % slides.length;
 }
 
-// Change slide every 3 seconds
-setInterval(showSlides, 3000);
+// Change slide on button click
+function changeSlide(step) {
+  currentSlide += step;
+  showSlide(currentSlide);
+}
 
-// Initial display
-showSlides();
+// Initialize the slideshow
+showSlide(currentSlide);
