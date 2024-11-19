@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  color: #333;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Welcome Section */
+.welcome {
+  margin: 20px 0;
+}
+
+.welcome h1 {
+  font-size: 3rem;
+  color: #ff4b5c;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Slideshow Section */
+.slideshow {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+  display: none;
+  position: relative;
+}
+
+.slides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Message Section */
+.message {
+  margin-top: 20px;
+}
+
+.message h2 {
+  font-size: 2rem;
+  color: #d72638;
+}
+
+.message p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  line-height: 1.5;
+}
