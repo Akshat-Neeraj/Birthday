@@ -11,35 +11,18 @@ body {
   padding: 20px;
 }
 
-/* Welcome Section */
-.welcome {
-  margin: 20px 0;
-}
-
-.welcome h1 {
-  font-size: 3rem;
-  color: #ff4b5c;
-}
-
-.welcome p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Slideshow Section */
-.slideshow {
+/* Slideshow Styles */
+.slideshow-container {
   position: relative;
   width: 80%;
   max-width: 600px;
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .slides {
   display: none;
-  position: relative;
 }
 
 .slides img {
@@ -48,22 +31,39 @@ body {
 }
 
 .caption {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Buttons */
+.prev, .next {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 10px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Message Section */
-.message {
-  margin-top: 20px;
-}
-
 .message h2 {
   font-size: 2rem;
   color: #d72638;
