@@ -1,55 +1,47 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: linear-gradient(120deg, #ff9a9e, #fad0c4);
   color: #333;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .container {
-  max-width: 400px;
+  text-align: center;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-  font-size: 2rem;
-  color: #d72638;
+/* Input Form Styling (Access Page) */
+form {
+  margin-top: 20px;
 }
 
-p {
-  font-size: 1.2rem;
-  margin: 15px 0;
-}
-
-input[type="text"] {
-  width: 100%;
+input {
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+  width: 200px;
+  border: 2px solid #d72638;
   border-radius: 5px;
-  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 1rem;
+  background-color: #d72638;
   color: white;
-  background: #d72638;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 button:hover {
-  background: #b21e30;
+  background-color: #a51d2e;
+}
+
+/* Error Message */
+#error-message {
+  color: red;
+  margin-top: 10px;
 }
 
 /* Slideshow Styles */
@@ -58,7 +50,7 @@ button:hover {
   width: 80%;
   max-width: 600px;
   margin: 20px auto;
-  overflow: hidden;
+  overflow: visible; /* Allow buttons to appear outside */
   border-radius: 10px;
 }
 
@@ -77,24 +69,37 @@ button:hover {
   color: #333;
 }
 
+/* Buttons */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #d72638;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 30px;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  user-select: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.prev {
+  left: -70px;
+}
+
+.next {
+  right: -70px;
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #d72638;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Message Section */
 .message h2 {
   font-size: 2rem;
   color: #d72638;
@@ -104,18 +109,4 @@ button:hover {
   font-size: 1.2rem;
   margin-top: 10px;
   line-height: 1.5;
-}
-
-/* Audio Player */
-audio {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  width: 250px;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
-
-audio:hover {
-  opacity: 1;
 }
