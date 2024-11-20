@@ -16,6 +16,19 @@
     </form>
     <p id="error-message"></p>
   </div>
-  <script src="script.js"></script>
+  <script>
+    function checkNickname(event) {
+      event.preventDefault();
+      const nickname = document.getElementById("nickname").value.trim().toLowerCase();
+      const errorMessage = document.getElementById("error-message");
+
+      if (nickname === "jimin") {
+        // Redirect with a query parameter
+        window.location.href = "slideshow.html?playMusic=true";
+      } else {
+        errorMessage.textContent = "Access denied. Incorrect nickname.";
+      }
+    }
+  </script>
 </body>
 </html>
