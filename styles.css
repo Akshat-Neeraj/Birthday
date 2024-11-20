@@ -50,7 +50,7 @@ button:hover {
   width: 80%;
   max-width: 600px;
   margin: 20px auto;
-  overflow: visible; /* Allow buttons to appear outside */
+  overflow: hidden;
   border-radius: 10px;
 }
 
