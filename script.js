@@ -3,10 +3,8 @@ let currentSlide = 0;
 // Show the current slide
 function showSlide(index) {
   const slides = document.querySelectorAll(".slides");
-  if (index >= slides.length) currentSlide = 0; // Loop back to the first slide
-  if (index < 0) currentSlide = slides.length - 1; // Loop back to the last slide
-  
-  // Hide all slides and display only the current slide
+  currentSlide = (index + slides.length) % slides.length;
+
   slides.forEach((slide, i) => {
     slide.style.display = i === currentSlide ? "block" : "none";
   });
@@ -14,9 +12,10 @@ function showSlide(index) {
 
 // Change slide on button click
 function changeSlide(step) {
-  currentSlide += step;
-  showSlide(currentSlide);
+  showSlide(currentSlide + step);
 }
 
 // Initialize the slideshow
-showSlide(currentSlide);
+document.addEventListener("DOMContentLoaded", () => {
+  showSlide(currentSlide);
+});
