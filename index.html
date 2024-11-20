@@ -3,46 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, Tanishqa!</title>
+  <title>Access Page</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Welcome Section -->
-    <header class="welcome">
-      <h1>Happy Birthday, Tanishqa!</h1>
-      <p>You make the world brighter, just by being you!</p>
-    </header>
+    <h1>Welcome to the Surprise!</h1>
+    <p>Please enter the special nickname to proceed:</p>
 
-    <!-- Slideshow Section -->
-    <section class="slideshow-container">
-      <!-- Slides -->
-      <div class="slides">
-        <img src="IMG-20241119-WA0008.jpg" alt="Tanishqa - Photo 1">
-        <p class="caption">Happy moments with Tanishqa!</p>
-      </div>
-      <div class="slides">
-        <img src="IMG-20241119-WA0007.jpg" alt="Tanishqa - Photo 2">
-        <p class="caption">You're a light in everyone's life, Tanishqa!</p>
-      </div>
-      <div class="slides">
-        <img src="IMG-20241119-WA0009.jpg" alt="Tanishqa - Photo 3">
-        <p class="caption">A beautiful smile for a beautiful soul!</p>
-      </div>
-      <!-- Add more slides as needed -->
+    <form id="nickname-form" onsubmit="checkNickname(event)">
+      <input type="text" id="nickname" placeholder="Enter nickname..." required>
+      <button type="submit">Submit</button>
+    </form>
 
-      <!-- Navigation Buttons -->
-      <button class="prev" onclick="changeSlide(-1)">&#10094; Previous</button>
-      <button class="next" onclick="changeSlide(1)">Next &#10095;</button>
-    </section>
-
-    <!-- Message Section -->
-    <section class="message">
-      <h2>Special Message</h2>
-      <p>Wishing you the happiest birthday, TANISHQA! Your joy lights up every moment we share!</p>
-    </section>
+    <p id="error-message" class="error-message"></p>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    function checkNickname(event) {
+      event.preventDefault(); // Prevent form submission
+      const nickname = document.getElementById("nickname").value.trim().toLowerCase();
+      const errorMessage = document.getElementById("error-message");
+
+      if (nickname === "jimin") {
+        window.location.href = "slideshow.html"; // Redirect to slideshow
+      } else {
+        errorMessage.textContent = "Access denied. Incorrect nickname.";
+      }
+    }
+  </script>
 </body>
 </html>
