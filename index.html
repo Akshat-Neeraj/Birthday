@@ -8,29 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to the Surprise!</h1>
-    <p>Please enter the special nickname to proceed:</p>
-
-    <form id="nickname-form" onsubmit="checkNickname(event)">
-      <input type="text" id="nickname" placeholder="Enter nickname..." required>
+    <h1>Welcome to Tanishqa's Special Birthday Page</h1>
+    <form onsubmit="checkNickname(event)">
+      <label for="nickname">Enter the nickname to gain access:</label>
+      <input type="text" id="nickname" placeholder="Enter nickname" required>
       <button type="submit">Submit</button>
     </form>
-
-    <p id="error-message" class="error-message"></p>
+    <p id="error-message"></p>
   </div>
-
-  <script>
-    function checkNickname(event) {
-      event.preventDefault(); // Prevent form submission
-      const nickname = document.getElementById("nickname").value.trim().toLowerCase();
-      const errorMessage = document.getElementById("error-message");
-
-      if (nickname === "jimin") {
-        window.location.href = "slideshow.html"; // Redirect to slideshow
-      } else {
-        errorMessage.textContent = "Access denied. Incorrect nickname.";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
