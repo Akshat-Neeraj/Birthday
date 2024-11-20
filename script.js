@@ -20,7 +20,6 @@ function showSlide(index) {
   if (index >= slides.length) currentSlide = 0; // Loop back to the first slide
   if (index < 0) currentSlide = slides.length - 1; // Loop back to the last slide
 
-  // Hide all slides and display only the current slide
   slides.forEach((slide, i) => {
     slide.style.display = i === currentSlide ? "block" : "none";
   });
